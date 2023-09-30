@@ -13,6 +13,7 @@
     "license": "Apache-2.0",
     "require": {
         "php": ">=8.0",
+        "egulias/email-validator": "^3.0",
         "hyperf/cache": "~3.0.0",
         "hyperf/command": "~3.0.0",
         "hyperf/config": "~3.0.0",
@@ -20,10 +21,13 @@
         "hyperf/db-connection": "~3.0.0",
         "hyperf/framework": "~3.0.0",
         "hyperf/guzzle": "~3.0.0",
+        "hyperf/http-message": "^3.0",
         "hyperf/http-server": "~3.0.0",
         "hyperf/logger": "~3.0.0",
         "hyperf/memory": "~3.0.0",
+        "hyperf/paginator": "^3.0",
         "hyperf/process": "~3.0.0",
+        "hyperf/validation": "^3.0",
         "hyperf/view": "^3.0",
         "hyperf/view-engine": "^3.0"
     },

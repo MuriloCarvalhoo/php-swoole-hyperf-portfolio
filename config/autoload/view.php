@@ -14,7 +14,7 @@ use Hyperf\View\Mode;
 
 return [
     'engine' => BladeEngine::class,
-    'mode' => Mode::TASK,
+    'mode' => Mode::SYNC,
     'config' => [
         'view_path' => BASE_PATH . '/storage/view/',
         'cache_path' => BASE_PATH . '/runtime/view/',

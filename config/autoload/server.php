@@ -12,6 +12,7 @@ declare(strict_types=1);
 use Hyperf\Server\Event;
 use Hyperf\Server\Server;
 use Swoole\Constant;
+use function Hyperf\Support\env;
 
 return [
     'mode' => SWOOLE_PROCESS,
@@ -20,7 +21,7 @@ return [
             'name' => 'http',
             'type' => Server::SERVER_HTTP,
             'host' => '0.0.0.0',
-            'port' => 9501,
+            'port' => (int) env('HTTP_PORT', '9501'),
             'sock_type' => SWOOLE_SOCK_TCP,
             'callbacks' => [
                 Event::ON_REQUEST => [Hyperf\HttpServer\Server::class, 'onRequest'],
@@ -37,6 +38,9 @@ return [
         Constant::OPTION_MAX_REQUEST => 100000,
         Constant::OPTION_SOCKET_BUFFER_SIZE => 2 * 1024 * 1024,
         Constant::OPTION_BUFFER_OUTPUT_SIZE => 2 * 1024 * 1024,
+        'document_root' => BASE_PATH.'/public',
+        'enable_static_handler' => true,
+        'task_enable_coroutine' => true,        
     ],
     'callbacks' => [
         Event::ON_WORKER_START => [Hyperf\Framework\Bootstrap\WorkerStartCallback::class, 'onWorkerStart'],

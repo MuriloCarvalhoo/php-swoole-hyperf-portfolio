@@ -15,6 +15,13 @@ use function Hyperf\ViewEngine\view;
 Router::get('/', function () {
     return view('welcome');
 });
+Router::get('/get/genres', [App\Controller\GetController::class, 'genres']);
 
-Router::get('titles', [App\Controller\TitleController::class, 'index']);
-Router::get('titles/get', [App\Controller\TitleController::class, 'get']);
+Router::addGroup('/titles/', function (){
+    Router::get('index', [App\Controller\TitleController::class, 'index']);
+    Router::get('get', [App\Controller\TitleController::class, 'get']);
+    Router::post('store',   [App\Controller\TitleController::class, 'store']);
+    Router::put('update/{titleId}',   [App\Controller\TitleController::class, 'update']);
+    Router::delete('delete/{titleId}',  [App\Controller\TitleController::class, 'delete']);
+});
+

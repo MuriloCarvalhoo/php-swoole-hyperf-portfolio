@@ -1,0 +1,16 @@
+:root {
+    --bs-primary: #00cc33; /* Verde Matrix */
+    --bs-secondary: #6c757d; /* Cinza */
+    --bs-success: #198754; /* Verde Escuro */
+    --bs-info: #0dcaf0; /* Azul Claro */
+    --bs-warning: #ffc107; /* Amarelo */
+    --bs-danger: #dc3545; /* Vermelho */
+    --bs-light: #f8f9fa; /* Branco */
+    --bs-dark: #343a40; /* Preto */
+    --bs-white: #ffffff; /* Branco */
+    --bs-gray: #adb5bd; /* Cinza Claro */
+    --bs-gray-dark: #6c757d; /* Cinza Escuro */
+    --bs-gray-light: #ced4da; /* Cinza Mais Claro */
+    --bs-body-color: #00cc33; /* Cor do texto: Verde Matrix */
+    --bs-body-bg: #111827;  /* Cor de fundo: Preto */
+  }

@@ -4,7 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Murilo Carvalho</title>
+        <title>{{ env('APP_NAME') }}</title>
+
+        <link rel="icon" type="image/x-icon" href="/img/tree.png"/>
+        <link rel="shortcut icon" href="/img/tree.png" type="image/x-icon" />
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -51,9 +54,11 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mt-16">
                         <a href="{{ env('APP_URL') }}/titles/index" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
                             <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 flex items-center justify-center rounded-full" style="color:#32CD32;">Laravel</div>
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Listagem com MariaDb</h2>
+                                <div class="h-16 w-16 bg-red-50 dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 flex items-center justify-center rounded-full" style="color:#32CD32;">Hyperf</div>
+                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Listing Movies</h2>
                                 <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                                    Listing movies with pagination and search. <br>
+                                    The Database has 9.641.001 records.
                                 </p>
 
                             </div>
@@ -79,7 +84,7 @@
 
                     <div class="text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right">
                         <div class="flex items-center gap-4">
-                            <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Desenvolvedor FullStack desde 2021</p>
+                            <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Developer FullStack since 2021</p>
                         </div>
                     </div>
                 </div>
@@ -115,4 +120,6 @@
 
         startProcess();
     </script>
+    
+    <script src="/js/app.js"></script>
 </html>
