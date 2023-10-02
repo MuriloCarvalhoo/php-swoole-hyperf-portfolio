@@ -17,6 +17,11 @@ import pt_BR from 'vee-validate/dist/locale/pt_BR'
 import VueMask from 'v-mask'
 
 import Vue from 'vue';
+import VueYoutube from "vue-youtube";
+import VueToast from "vue-toast-notification";
+import "vue-toast-notification/dist/index.css";
+import "vue-awesome/icons/flag";
+import "vue-awesome/icons";
 
 window.moment = require('moment/moment');
 moment.locale('pt-br')
@@ -30,13 +35,17 @@ Vue.use(IconsPlugin)
 Vue.use(VeeValidate)
 Vue.use(VueMask)
 Vue.use(money, {precision: 4})
+Vue.use(VueYoutube);
+Vue.use(VueToast);
 
 import TitleIndex from './components/title/Index.vue';
+import MovieIndex from './components/movie/Main.vue';
 
 const app = new Vue({
 	el: '#app',
 	
 	components: {
 		'title-index': TitleIndex,
+		'movie-index': MovieIndex
 	}
 });

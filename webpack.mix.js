@@ -31,7 +31,7 @@ mix.js('storage/js/app.js', 'public/js')
     .disableSuccessNotifications();
     mix.webpackConfig({
         output: {
-            publicPath: `${process.env.MIX_BASE_URL}/`,
-            chunkFilename: 'js/[name].js?id=[chunkhash]',
+            publicPath: `${process.env.MIX_BASE_URL}/public/`,
+            chunkFilename: `public/js/[name].js?id=[chunkhash]`,
         },
     });

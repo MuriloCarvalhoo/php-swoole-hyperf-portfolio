@@ -28,7 +28,7 @@ class TitleController extends AbstractController
 
     public function get(RequestInterface $request)
     {     
-        return Title::select('id', 'tconst', 'type_id', 'primary', 'original', 'is_adult', 'start_year', 'end_year', 'runtime_minutes')
+        return Title::select('id', 'tconst', 'type_id', 'primary', 'original', 'is_adult', 'start_year', 'end_year', 'runtime_minutes', 'img')
             ->with('genres:id,name')
             ->when($request->input('tconst'), function ($query) use ($request) {
                 $query->where(function($query) use ($request) {

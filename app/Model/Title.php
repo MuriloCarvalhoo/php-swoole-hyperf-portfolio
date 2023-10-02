@@ -20,6 +20,7 @@ class Title extends Model
         'start_year',
         'end_year',
         'runtime_minutes',
+        'img'
     ];
 
     public function genres()

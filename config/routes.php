@@ -25,3 +25,11 @@ Router::addGroup('/titles/', function (){
     Router::delete('delete/{titleId}',  [App\Controller\TitleController::class, 'delete']);
 });
 
+Router::addGroup('/movies/', function (){
+    Router::get('index', [App\Controller\MovieController::class, 'index']);
+    Router::get('get', [App\Controller\MovieController::class, 'get']);
+    Router::get('main', [App\Controller\MovieController::class, 'main']);
+    Router::get('detail/{id}',   [App\Controller\MovieController::class, 'detail']);
+    Router::get('my-list',   [App\Controller\MovieController::class, 'myList']);
+    Router::get('url-img/{tconst}',   [App\Controller\MovieController::class, 'getURlImg']);
+});
