@@ -168,8 +168,8 @@ export default {
 		return {
 			value: 100,
 			max: 100,
-			page: "titles",
-			baseUrl: process.env.MIX_BASE_URL,
+			page: "titles/get?",
+			baseUrl: process.env.MIX_BASE_URL,			
 			loading: true,
 			tconst: null,
 			primary: null,

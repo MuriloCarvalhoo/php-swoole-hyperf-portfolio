@@ -11,7 +11,7 @@ export default {
   },
   computed: {
     url() {
-      let url = `${process.env.MIX_BASE_URL}/${this.page}/get?`
+      let url = `${process.env.MIX_BASE_URL}/${this.page}`
       url = this.tconst ? url.concat(`&tconst=${this.tconst}`) : url
       url = this.primary ? url.concat(`&primary=${this.primary}`) : url
       url = this.original ? url.concat(`&original=${this.original}`) : url
@@ -20,6 +20,7 @@ export default {
       url = this.endYear ? url.concat(`&endYear=${this.endYear}`) : url
       url = this.runtimeMinutes ? url.concat(`&runtimeMinutes=${this.runtimeMinutes}`) : url
       url = this.genres ? url.concat(`&genres=${this.genres}`) : url
+      url = this.search ? url.concat(`&search=${this.search}`) : url
       return url
     },
     rows() {

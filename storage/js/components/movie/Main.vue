@@ -1,20 +1,42 @@
 <template>
   <div id="app">
-    <NextReleases />
-    <Movies :key="movie.id" :type="movie.type" :description="movie.description"  v-for="movie in movies"/>
-    <h4>Movies</h4>
+    <Header @changeSearch="changeSearch($event)" />
+    <div v-if="!search">
+      <NextReleases />
+      <Movies :key="movie.id" :type="movie.type" :description="movie.description"  v-for="movie in movies"/>
+      <h4>Movies</h4>
+    </div>
+
+    <div v-if="search">
+      <SearchMovies :search="search" />
+    </div>
+
   </div>
 </template>
 
 <script>
+import Header from "./Header.vue";
 import NextReleases from "./NextReleases.vue";
 import Movies from "./Movies.vue";
+import SearchMovies from "./SearchMovies.vue";
 
 export default {
   name: "App",
   components: {
+    Header,
     NextReleases,
     Movies,
+    SearchMovies
+  },
+  data() {
+    return {
+      search: "",
+    };
+  },
+  methods: {
+    changeSearch(search) {
+      this.search = search;
+    },
   },
   computed: {
     movies() {

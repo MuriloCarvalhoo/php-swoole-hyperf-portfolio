@@ -103,7 +103,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
-            axios.get("http://127.0.0.1:9501" + '/get/genres').then(function (res) {
+            axios.get("https://oakdeveloper.com.br" + '/get/genres').then(function (res) {
               _this.genres = res.data;
             });
           case 1:

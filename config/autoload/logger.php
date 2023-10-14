@@ -1,6 +1,8 @@
 <?php
 
 declare(strict_types=1);
+use function Hyperf\Support\env;
+
 /**
  * This file is part of Hyperf.
  *
@@ -15,16 +17,18 @@ return [
             'class' => Monolog\Handler\StreamHandler::class,
             'constructor' => [
                 'stream' => BASE_PATH . '/runtime/logs/hyperf.log',
-                'level' => Monolog\Logger::DEBUG,
+                'level' => Monolog\Logger::ERROR,
+
             ],
         ],
         'formatter' => [
             'class' => Monolog\Formatter\LineFormatter::class,
             'constructor' => [
-                'format' => null,
+                'format' => "||%datetime%||%channel%||%level_name%||%message%||%context%||%extra%\n",
                 'dateFormat' => 'Y-m-d H:i:s',
                 'allowInlineLineBreaks' => true,
+                'includeStacktraces' => true,
             ],
         ],
-    ],
+    ]
 ];

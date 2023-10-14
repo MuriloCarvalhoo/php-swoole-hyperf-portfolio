@@ -20,6 +20,16 @@ class MovieController extends AbstractController
   {
     try {
 
+      $title = Title::where('tconst', $tconst)->first();
+
+      if(!$title) {
+        return $response->withStatus(500)->json(['error' => 'Error to find title']);
+      }
+
+      if($title->img) {
+        return $title->img;
+      }
+
       // URL da página que você deseja acessar
       $url = "https://www.imdb.com/title/" . $tconst;
 
@@ -32,7 +42,6 @@ class MovieController extends AbstractController
       if ($imageTag->count() > 0) {
         $image_url = $imageTag->attr('content');
 
-        $title = Title::where('tconst', $tconst)->first();
         $title->img = $image_url;
         $title->save();
 
@@ -54,5 +63,12 @@ class MovieController extends AbstractController
       })
       ->limit(12)
       ->get();
+  }
+
+  public function getElastic(RequestInterface $request)
+  {
+    return Title::search($request->input('search'))
+      ->take(30)
+    ->get();
   }
 }

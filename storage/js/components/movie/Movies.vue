@@ -57,9 +57,6 @@ export default {
     async getMovieDetail(){
       this.showLoading = true;
       try {
-        // await axios.get(`${process.env.MIX_BASE_URL}/movies/get?&${this.type}`).then(res => {
-        //   this.movies = res?.data;
-        // });
         const Search = await Movies(this.type).get();
         this.movies = Search?.data;
 

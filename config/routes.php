@@ -28,6 +28,8 @@ Router::addGroup('/titles/', function (){
 Router::addGroup('/movies/', function (){
     Router::get('index', [App\Controller\MovieController::class, 'index']);
     Router::get('get', [App\Controller\MovieController::class, 'get']);
+    Router::get('get-elastic', [App\Controller\MovieController::class, 'getElastic']);
+
     Router::get('main', [App\Controller\MovieController::class, 'main']);
     Router::get('detail/{id}',   [App\Controller\MovieController::class, 'detail']);
     Router::get('my-list',   [App\Controller\MovieController::class, 'myList']);
